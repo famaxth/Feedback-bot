@@ -1,11 +1,13 @@
+# -*- coding: utf-8 -*-
+
 from datetime import datetime
+
+import telebot
+from telebot import types
 
 import db
 import menu
 from config import ADMIN_ID, BOT_TOKEN, CHANNEL_URL
-
-import telebot
-from telebot import types
 
 
 db.init_db()
@@ -136,7 +138,6 @@ def receive_message(message):
 
 if __name__ == '__main__':
     bot.polling(none_stop=True)
-
 
 bot.send_message(
     ADMIN_ID, "<a><pre>Бот закончил работу!</pre></a>", parse_mode='HTML')
